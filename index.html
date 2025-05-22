@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thunder</title>
+    <link rel="shortcut icon" href="./img/download.jpg" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+       body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        header {
+            background-color: rgb(0, 0, 0);
+            color: #ffffff;
+        }
+        .logo {
+            margin-left: 20px;
+        }
+        .menu {
+            display: flex;
+            flex-direction: row;  
+            font-size: 20px;
+            align-items: center;
+            list-style: none;
+            letter-spacing: 0.9px;
+            margin-right: 10px;
+            flex-wrap: wrap;
+        } 
+        .menu li a {
+            margin-right: auto;
+            text-decoration: none;
+            color: #000000;
+            font-weight: 600;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 20px;
+        }
+        .menu-nav {
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: row;
+            align-content: flex-start;
+            justify-content: space-between;
+        }
+        .banner {
+            background-image: url('./img/thunderimg.jpg');
+            background-position: center;
+            height: 90vh;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .banner::after {
+            opacity: 0.1;
+        }
+        .banner h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .banner form {
+            background-color: rgb(255, 255, 255);
+            padding: 7px;
+            border-radius: 80px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            color: black;
+            width: 50%;
+        }
+        .inputall {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+            gap: 8px;
+        }
+        .icolabel {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 10px 0;
+            gap: 10px;
+        }
+        .icon {
+            font-size: 20px;
+            color: #000;
+        }
+        #sub-btn {
+            background-color: #000;
+            color: white;
+            padding: 20px 20px;
+            border: none;
+            border-radius: 35px;
+            width: 100px;
+            cursor: pointer;
+        }
+        .banner .icolabel input {
+            background-color: transparent;
+            border: none;
+        }
+        .banner .bo-left {
+            border-right: solid 0.5px #616161;
+        }
+
+        /* Updated About Section */
+        .about-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 90px;
+            gap: 20px;
+            align-items: center;
+        }
+        .about {
+            width: 50%;
+            padding: 20px;
+        }
+        .about-img {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-img img {
+            width: 80%; /* Reduced image size */
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 10px 10px 80px rgba(0, 0, 0, 0.9);
+        }
+        .about ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .about ul li {
+            margin: 10px 0;
+        }
+        .about ul li::before {
+            content: '★ ';
+            margin-right: 5px;
+        }
+        .packages .card{
+            margin-left: 2px;
+            width: 18rem;
+            overflow: hidden;
+            border-radius: 15px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);    
+        }
+        .packages .card .img-card {
+            height: 140px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .packages .card .img-card img {
+            height: 250px;
+        }
+        .packages .card .content-card {
+            padding: 0px 15px 15px 15px;
+        }
+        .packages .card .content-card p span,
+        .packages .card .content-card .card-price p {
+            font-weight: bold;
+            color: #000;
+        }
+        .packages h2{
+            text-align: center;
+        }
+        .card-price {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cards{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+flex-wrap: wrap;
+margin-bottom: 80px;
+        }
+        .contact {
+            padding: 50px;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .contact-det {
+            width: 50%;
+            padding: 50px;
+        }
+        .contact-det h6 {
+            font-weight: 500;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .contact-det a {
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 400;
+
+            color: #000;}
+            .contact-det iframe {
+                width: 100%;
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            }
+            .contact-us {
+                width: 50%;
+                padding: 50px;
+                align-items: center;
+            }
+            .contact-us form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .contact-us form input[type="text"],
+            .contact-us form input[type="email"],       
+            .contact-us form input[type="tel"],
+            .contact-us form textarea {
+                width: 60%;
+                height: 50px;
+                padding-left: 20px;
+                border-radius: 7px;
+            }
+            .contact-us form input[type="submit"]{
+                background-color: #000;
+                color: white;
+                padding: 20px 20px;
+                border: none;
+                border-radius: 35px;
+                width: 60%;
+                cursor: pointer;
+            }
+            footer{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                padding: 20px;
+                background-color: #f2f2f2;
+            }
+            @media (max-width: 912px) {
+                footer{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    border-top: 5px solid #ffcc00;
+}
+
+footer .col h4 {
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+footer .col1 img {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+footer .col address,
+footer .col p,
+footer .col a {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+footer .col a {
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer .col a:hover {
+    color: #ffcc00;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 912px) {
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+@media (max-width: 600px) {
+    footer {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+   <header>
+    <nav class="menu-nav">
+        <img src="./img/logo.png" alt="Thunder Logo" class="logo" height="80px">
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#pack">Package</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+   </header>
+
+   <section class="banner">
+    <h1>Welcome to Thunder</h1>
+    <p>Your one-stop solution for all your cloud computing needs.</p>
+    <form action="">
+        <div class="icolabel bo-left">
+            <div class="icon">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="inputall">
+                <label for="loc">Location:</label>
+                <input type="text" id="loc" name="location" placeholder="Where are you going?">
+            </div>
+        </div>
+        <div class="icolabel">
+            <div class="icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <div class="inputall">
+                <label for="start">Start Date:</label>
+                <input type="date" id="start" name="start">
+            </div>
+        </div>
+        <div class="icolabel">
+            <div class="icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <div class="inputall">
+                <label for="end">End Date:</label>
+                <input type="date" id="end" name="end">
+            </div>
+        </div>
+        <div class="inputall">
+            <button type="submit" id="sub-btn">Submit</button>
+        </div>
+    </form>
+   </section>
+
+   <section class="about-section" id="about">
+    <div class="about">
+        <h1>About Us</h1>
+        <p>Thunder is a leading provider of cloud computing solutions, offering a wide range of services to meet the needs of businesses and individuals alike. Our mission is to provide reliable, scalable, and secure cloud solutions that empower our customers to achieve their goals.</p>
+        <ul>
+            <li>Cloud Storage Lorem ipsum, dolor sit amet consectetur adipisicing elit.Cloud Storage Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+            <li>Virtual Servers Lorem ipsum dolor sit amet consectetur.Cloud Storage Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+            <li>Cloud Storage Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cloud Storage Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+        </ul>
+    </div>
+    <div class="about-img">
+        <img src="./img/abimg.jpg" alt="About Thunder">
+    </div>
+   </section>
+   <section class="packages" id="pack">
+    <h2>Our Packages</h2>
+    <div class="cards">
+   <div class="card">
+<div class="img-card">
+<img src="./img/abimg.jpg" alt="">
+    </div>
+    <div class="content-card">
+        <p><i class="fa fa-location-dot"></i> Munnar, Kerala</p>
+    <h3>4 day packages to Munnar</h3>
+    <p><i class="fa fa-star"></i> 4.5/5 <span>Review</span></p>
+    <hr>
+    <div class="card-price">
+        <p>From <span>$224</span></p>
+        <div><i class="fa-regular fa-clock"></i> 4 days</div>
+    </div>
+    </div>
+    </div>
+       <div class="card">
+<div class="img-card">
+<img src="./img/abimg.jpg" alt="">
+    </div>
+    <div class="content-card">
+        <p><i class="fa fa-location-dot"></i> Munnar, Kerala</p>
+    <h3>4 day packages to Munnar</h3>
+    <p><i class="fa fa-star"></i> 4.5/5 <span>Review</span></p>
+    <hr>
+    <div class="card-price">
+        <p>From <span>$224</span></p>
+        <div><i class="fa-regular fa-clock"></i> 4 days</div>
+    </div>
+    </div>
+    </div>
+       <div class="card">
+<div class="img-card">
+<img src="./img/abimg.jpg" alt="">
+    </div>
+    <div class="content-card">
+        <p><i class="fa fa-location-dot"></i> Munnar, Kerala</p>
+    <h3>4 day packages to Munnar</h3>
+    <p><i class="fa fa-star"></i> 4.5/5 <span>Review</span></p>
+    <hr>
+    <div class="card-price">
+        <p>From <span>$224</span></p>
+        <div><i class="fa-regular fa-clock"></i> 4 days</div>
+    </div>
+    </div>
+    </div>
+    </div>
+ 
+    
+    
+   </section>
+   <section class="contact" id="contact">
+    <div class="contact-det">
+        <div class="det">
+<h6>Phone number: </h6>
+<a href="tel:9876543210">+91 9876543210</a>
+        </div>
+        <div class="det">
+            <h6>Email: </h6>
+            <a href="mailto:info@thunder.com">info@thunder.com</a>
+        </div>
+        <div class="det">
+            <h6>Location: </h6>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125218.54191373527!2d75.81081544999999!3d11.25556685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65938563d4747%3A0x32150641ca32ecab!2sKozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1747818841340!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+     </div>
+     <div class="contact-us">
+        <h2>Contact Us</h2>
+        <form action="">
+            <div class="form-el">
+                <input type="text" placeholder="Full Name">
+            </div>
+            <div class="form-el">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="form-el">
+                <input type="tel" placeholder="Phone Number">
+            </div>
+            <div class="form-el">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+            <input type="submit" value="Send Message">
+        </form>
+     </div>
+    
+   
+
+   </section>
+   <footer>
+    <div class="col col1">
+        <img src="./img/logo.png" alt="Thunder Logo">
+        <address>
+            <p>123 Thunder Road</p>
+            <p>Thunder City, TC 12345</p>
+        </address>
+        <div class="det">
+            <h4>Phone</h4>
+        <a href="tel:+919876543210">+91 9876543210</a>
+            </div>
+    </div>
+   
+    <div class="col col2">
+        <h4>Links</h4>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="col col3">
+        <p>Lorem ipsum dolor sit ametperferendis cupiditate perspiciatis?Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, ab consectetur ea eligendi nostrum vero esse natus, qui illo facilis amet maiores at, laborum obcaecati ad sit nobis ex? Numquam pariatur ipsum ea, cupiditate cum porro voluptatum accusantium expedita, iusto eos quod. Tenetur veritatis perferendis repellendus nostrum cum debitis deleniti?</p>
+    </div>
+    
+   </footer>
+</body>
+</html>
